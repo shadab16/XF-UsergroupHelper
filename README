@@ -1,0 +1,72 @@
+README
+==============================
+
+Thank you for downloading this Template-Helper.
+The installation instructions are provided in ./INSTALL.txt
+
+And the license + usage terms are available in ./LICENSE.txt
+
+
+BASIC USAGE
+==============================
+
+The basic syntax for using this helper in a template is:
+	{xen:helper checkusergroup, $visitor, X}
+
+Replace X with the usergroup id you want to check. This X usergroup ID
+will be searched in primary as well as secondary usergroups of $visitor.
+
+The helper returns TRUE if the $visitor belongs to the usergroup;
+and FALSE otherwise.
+
+
+SAMPLE CONDITIONAL
+==============================
+
+<xen:if is="{xen:helper checkusergroup, $visitor, 3}">
+	Hello, Administrative user!
+</xen:if>
+
+
+ADVANCED USAGE
+==============================
+
+(Most users won't ever need to use this)
+
+The advanced syntax for using this helper is:
+	{xen:helper checkusergroup, $visitor, <type>, <ids>}
+
+<type> => The usergroup-check type.
+
+3 options are available: 'ALL' (default), 'PRIMARY', 'SECONDARY'.
+'ALL' is the default type & you don't need to explicitly specify it.
+
+<ids> => A comma-separated list of usergroup ids.
+
+You can pass any number of usergroup ids. The helper returns TRUE
+if it finds a match for any usergroup id passed. So essentially,
+the helper works like a boolean OR if multiple ids are passed to it.
+
+
+ADVANCED SAMPLES
+==============================
+
+<xen:if is="{xen:helper checkusergroup, $visitor, PRIMARY, 3}">
+	// User whose primary usergroup is 3
+</xen:if>
+
+<xen:if is="{xen:helper checkusergroup, $visitor, SECONDARY, 3}">
+	// User whose secondary usergroup list includes 3
+</xen:if>
+
+<xen:if is="{xen:helper checkusergroup, $visitor, 1, 2, 3}">
+	// User who belongs to usergroup 1 or 2 or 3
+</xen:if>
+
+<xen:if is="{xen:helper checkusergroup, $visitor, PRIMARY, 2, 3}">
+	// User whose primary usergroup is 2 or 3
+</xen:if>
+
+<xen:if is="{xen:helper checkusergroup, $visitor, SECONDARY, 1, 2, 4}">
+	// User whose secondary usergroup list includes 1 or 2 or 4.
+</xen:if>

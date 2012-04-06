@@ -1,0 +1,12 @@
+INSTALL
+====================
+
+1. Upload the contents of /upload/ directory to the /library/
+   directory where your XenForo is installed.
+
+2. Go to: admin.php » Install Add-on
+
+3. Select "addon_gp_usergroup_helper.xml" contained in this package
+   via the file chooser.
+
+4. [Install Add-On]

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="gp_usergroup_helper" title="[GP] Template-Helper for Usergroups" version_string="1.0" version_id="0" url="" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="init_dependencies" execute_order="10" callback_class="GeekPoint_UsergroupHelper_EventListener" callback_method="listen" active="1" description="Add custom helper to the XenForo_Template_Helper_Core class"/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <optiongroups/>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases/>
+  <route_prefixes/>
+  <style_properties/>
+  <templates/>
+</addon>
